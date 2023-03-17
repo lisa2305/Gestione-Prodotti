@@ -9,7 +9,7 @@ export class StellaComponent implements OnChanges {
   //rating: number = 4;
   //ci permette di prendere il valore da un componente padre
   @Input() rating: number;
-  cropWidth: number = 75;
+  cropWidth: number;
 
   ngOnChanges(): void {
     this.cropWidth = this.rating * (75 / 5);
