@@ -16,9 +16,10 @@
       <th>Stelle</th>
       <th>Immagine</th>
     </tr>
+
     <tr *ngFor="let m of prodottiFiltrati">
       <td>{{ m.productName }}</td>
-      <td>{{ m.productCode  | convertToSpace: '-'}}</td>
+      <td>{{ m.productCode | convertToSpace: '-' }}</td>
       <td>{{ m.releaseDate }}</td>
       <td>{{ m.price }}</td>
       <!--<td>{{ m.starRating }}</td>-->
