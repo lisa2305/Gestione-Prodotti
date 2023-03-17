@@ -1,6 +1,6 @@
 @import '~font-awesome/css/font-awesome.css';
 
-.corp {
+.crop {
   /*controlla cosa succede al contenuto
   quando il contenuto è troppo lungo*/
   overflow: hidden;
