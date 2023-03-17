@@ -1,0 +1,30 @@
+<div>
+  Inserisci filtro <input type="text" [(ngModel)]="listFilter" />
+  <p>Filtrato per: {{ listFilter }}</p>
+</div>
+<!--tabella-->
+<div>
+  <p></p>
+  <button id="b" (click)="mostraImmagine()">Mostra immagini</button>
+  <p></p>
+  <table>
+    <tr>
+      <th>Prodotto</th>
+      <th>Codice</th>
+      <th>Disponibile</th>
+      <th>Prezzo</th>
+      <th>Stelle</th>
+      <th>Immagine</th>
+    </tr>
+    <tr *ngFor="let m of prodottiFiltrati">
+      <td>{{ m.productName }}</td>
+      <td>{{ m.productCode  | convertToSpace: '-'}}</td>
+      <td>{{ m.releaseDate }}</td>
+      <td>{{ m.price }}</td>
+      <td>{{ m.starRating }}</td>
+      <td>
+        <img *ngIf="imm" [src]="m.imageUrl" width="100" height="100" />
+      </td>
+    </tr>
+  </table>
+</div>
