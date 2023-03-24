@@ -1,4 +1,10 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'stella',
@@ -11,7 +17,13 @@ export class StellaComponent implements OnChanges {
   @Input() rating: number;
   cropWidth: number;
 
+  @Output() dalleStelle: EventEmitter<string> = new EventEmitter<string>();
+
   ngOnChanges(): void {
     this.cropWidth = this.rating * (75 / 5);
+  }
+
+  onClick() {
+    this.dalleStelle.emit(`${this.rating}`);
   }
 }

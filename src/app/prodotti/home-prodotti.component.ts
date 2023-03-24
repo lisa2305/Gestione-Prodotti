@@ -12,6 +12,7 @@ export class ProdottiComponent {
   imm: boolean = false;
   private _listFilter: string = '';
   prodottiFiltrati: IProdotto[] = [];
+  fromStelle: string = "";
 
   get listFilter(): string {
     return this._listFilter;
@@ -41,5 +42,9 @@ export class ProdottiComponent {
     } else {
       document.getElementById('b').innerHTML = 'Mostra immagini';
     }
+  }
+
+  onStelleClick(valore: string):void{
+    this.fromStelle = valore;
   }
 }
