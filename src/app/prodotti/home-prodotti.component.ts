@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IProdotto } from '../lista-prodotti';
-import { PRODOTTO } from './lista-prodotti.component';
+import { ProdottiService } from './prodotti.service';
 
 @Component({
   selector: 'app-prodotti',
@@ -8,11 +8,13 @@ import { PRODOTTO } from './lista-prodotti.component';
   styleUrls: ['./prodotti.component.css'],
 })
 export class ProdottiComponent {
-  prod = PRODOTTO;
+  prod: IProdotto[] = [];
   imm: boolean = false;
   private _listFilter: string = '';
   prodottiFiltrati: IProdotto[] = [];
-  fromStelle: string = "";
+  fromStelle: string = '';
+
+  constructor(private prodottiservizio: ProdottiService) {}
 
   get listFilter(): string {
     return this._listFilter;
@@ -32,7 +34,9 @@ export class ProdottiComponent {
 
   ngOnInit() {
     console.log('lista creata');
-    this.listFilter = '';
+   // this.listFilter = '';
+    this.prod = this.prodottiservizio.getProdotti();
+    this.prodottiFiltrati = this.prod;
   }
 
   mostraImmagine() {
@@ -44,7 +48,7 @@ export class ProdottiComponent {
     }
   }
 
-  onStelleClick(valore: string):void{
+  onStelleClick(valore: string): void {
     this.fromStelle = valore;
   }
 }
