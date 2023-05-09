@@ -33,8 +33,6 @@ export class ProdottiComponent {
   }
 
   ngOnInit() {
-    console.log('lista creata');
-   // this.listFilter = '';
     this.prod = this.prodottiservizio.getProdotti();
     this.prodottiFiltrati = this.prod;
   }
