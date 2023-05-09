@@ -1,3 +1,5 @@
 import { IProdotto } from '../lista-prodotti';
 
-export const PRODOTTO: IProdotto[] = [];
+export const PRODOTTO: IProdotto[] = [
+  
+];
